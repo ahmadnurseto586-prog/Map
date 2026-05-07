@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Firebase</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="card" id="loginBox">
+
+    <h1>Login</h1>
+    <p>Masuk ke akun kamu</p>
+
+    <input type="text" id="email" placeholder="Email atau HP">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p class="small">Data akan dikirim ke Firebase Firestore</p>
+  </div>
+
+  <div class="card hidden" id="successBox">
+    <h1>Berhasil 🎉</h1>
+    <p id="userText"></p>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+</div>
+
+<!-- FIREBASE -->
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
